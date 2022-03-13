@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CARD</title>
+	<link rel="icon" type="images/x-icon" href="images/.">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/links.css' %}">
+	<script src="https://kit.fontawesome.com/30e957dbd6.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></head>
+<body >
+	{% comment %} <nav>
+		<div class="icon">DERC</div>
+		<div class="search_box">
+			<form action='/affiliates/search/' method="get">
+				{% csrf_token %}
+				<input id ="stext" name="stext" type="search" placeholder="Search here" style="width: 500px;">
+				<button type="submit"><span class="fa fa-search"></span></button>
+			</form>
+		</div>
+		<ol>
+			<li><a href="/">HOME</a></li>
+			<li><a href="#">CONTACT US</a></li>
+			{% if user.is_authenticated %}
+				<li><a href="/user/dashboard/" style="width:50px;height:50px; float:right;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M425.1 482.6c-2.303-1.25-4.572-2.559-6.809-3.93l-7.818 4.493c-6.002 3.504-12.83 5.352-19.75 5.352c-10.71 0-21.13-4.492-28.97-12.75c-18.41-20.09-32.29-44.15-40.22-69.9c-5.352-18.06 2.343-36.87 17.83-45.24l8.018-4.669c-.0664-2.621-.0664-5.242 0-7.859l-7.655-4.461c-12.3-6.953-19.4-19.66-19.64-33.38C305.6 306.3 290.4 304 274.7 304H173.3C77.61 304 0 381.7 0 477.4C0 496.5 15.52 512 34.66 512H413.3c5.727 0 10.9-1.727 15.66-4.188c-2.271-4.984-3.86-10.3-3.86-16.06V482.6zM224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM610.5 373.3c2.625-14 2.625-28.5 0-42.5l25.75-15c3-1.625 4.375-5.125 3.375-8.5c-6.75-21.5-18.25-41.13-33.25-57.38c-2.25-2.5-6-3.125-9-1.375l-25.75 14.88c-10.88-9.25-23.38-16.5-36.88-21.25V212.3c0-3.375-2.5-6.375-5.75-7c-22.25-5-45-4.875-66.25 0c-3.25 .625-5.625 3.625-5.625 7v29.88c-13.5 4.75-26 12-36.88 21.25L394.4 248.5c-2.875-1.75-6.625-1.125-9 1.375c-15 16.25-26.5 35.88-33.13 57.38c-1 3.375 .3751 6.875 3.25 8.5l25.75 15c-2.5 14-2.5 28.5 0 42.5l-25.75 15c-3 1.625-4.25 5.125-3.25 8.5c6.625 21.5 18.13 41 33.13 57.38c2.375 2.5 6 3.125 9 1.375l25.88-14.88c10.88 9.25 23.38 16.5 36.88 21.25v29.88c0 3.375 2.375 6.375 5.625 7c22.38 5 45 4.875 66.25 0c3.25-.625 5.75-3.625 5.75-7v-29.88c13.5-4.75 26-12 36.88-21.25l25.75 14.88c2.875 1.75 6.75 1.125 9-1.375c15-16.25 26.5-35.88 33.25-57.38c1-3.375-.3751-6.875-3.375-8.5L610.5 373.3zM496 400.5c-26.75 0-48.5-21.75-48.5-48.5s21.75-48.5 48.5-48.5c26.75 0 48.5 21.75 48.5 48.5S522.8 400.5 496 400.5z"></svg></a></li>
+			{% endif %}
+		</ol>
+	</nav> {% endcomment %}
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#6400B0">
+		<a class="navbar-brand" href="/">DERC  </a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/affiliates/">Links</a>
+			</li>
+			{% if user.is_authenticated %}
+				<li class="nav-item">
+					<a class="nav-link" href="/user/logout/">LogOut</a>
+				</li>
+			{% else %}
+				<li class="nav-item">
+					<a class="nav-link" href="/user/loginpage/">LogIn</a>
+				</li>
+			{% endif %}
+			{% if user.is_staff %}
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Actions
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Add Link</a>
+					<a class="dropdown-item" href="#">Admin</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+			{% endif %}
+			</ul>
+			<form class="form-inline my-2 my-lg-0" action='/affiliates/search/' method="get">
+				{% csrf_token %}
+				<input id ="stext" name="stext" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-success" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+<div class="store">
+	{% for product in products %}
+		<div class="g-col-6">
+			{% comment %} <div class="maxm">
+				<div class="ecard">
+					<div class="eimgBx">
+						<img src="{{product.image}}" style="width: 60%; height: 80%;">
+					</div>
+					<div class="econtentBx">
+						<h2 style="margin-top:4%;"><b> {{product.product_name}} </b></h2>
+						<div class="ecolor text-white">
+							<h3>Price </h3>
+							<span> {{product.price}} </span>
+						</div>
+						<div class="ecolor text-white">
+							<span>{{product.website}}</span>
+						</div>
+						<div class="ecolor text-white">
+							<span>{{product.influencer}}</span>
+						</div>
+						<a href="{{product.affiliate_link}}">Buy now </a>
+					</div>
+				</div>
+			</div> {% endcomment %}
+			<div class="card text-white bg-info mb-3" style="width: 22rem;">
+				<div class="imgcontainer">
+					<img class="cardimg" src="{{product.image}}" alt="Card image cap">
+				</div>
+				<div class="card-body cardbody">
+				  <h5 class="card-title" style="font-size:4vh;">{{product.product_name}}</h5>
+				</div>
+				<ul class="list-group list-group-flush " style="background-color:#17a2b8;">
+				  <li class="list-group-item" style="background-color:#17a2b8;">Price : {{product.price}}</li>
+				  <li class="list-group-item" style="background-color:#17a2b8;">Added By : {{product.influencer}}</li>
+				</ul>
+				<div class="card-body" style="background-color:white;">
+				  <a href="{{product.affiliate_link}}" class="card-link" style="font-weight:400; font-style: italic; text-decoration:underline;">{{product.website}}</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+<footer class="footer">
+<div class="l-footer">
+<h1>
+<img src="https://i.postimg.cc/y62wcLBq/logo.png" alt=""></h1>
+<p>DREC Pencho
+</p>
+</div>
+<ul class="r-footer">
+<li>
+  <h2>
+Social</h2>
+<ul class="box">
+<li><a href="#">Facebook</a></li>
+<li><a href="#">Twitter</a></li>
+<li><a href="#">Pinterest</a></li>
+<li><a href="#">Dribbble</a></li>
+</ul>
+</li>
+<li class="features">
+  <h2>
+Information</h2>
+<ul class="box h-box">
+<li><a href="#">Blog</a></li>
+<li><a href="#">Pricing</a></li>
+<li><a href="#">Sales</a></li>
+<li><a href="#">Tickets</a></li>
+<li><a href="#">Certifications</a></li>
+<li><a href="#">Customer Service</a></li>
+</ul>
+</li>
+<li>
+  <h2>
+Legal</h2>
+<ul class="box">
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Use</a></li>
+<li><a href="#">Contract</a></li>
+</ul>
+</li>
+</ul>
+<div class="b-footer">
+</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script></body>
+</html>

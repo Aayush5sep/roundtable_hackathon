@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static '/css/signup.css' %}">
+    <title></title>
+  </head>
+  <body>
+
+    <section>
+      <div class="image">
+        <img src="{% static '/images/Login banner.png' %}" alt="">
+      </div>
+      <div class="flex">
+        <div class="loginbox">
+          <h2>SignUp</h2>
+          <form action='/user/newaccnt/' method="post">
+            {% csrf_token %}
+            <div class="inputbox">
+              <span>Username</span>
+              <input type="text" name="username" id="username" placeholder="Username">
+              <span>Email</span>
+              <input type="email" name="email" id="email" placeholder="Email">
+              <span>Password</span>
+              <input type="password" name="password" id="password" placeholder="Password">
+              <span>First Name</span>
+              <input type="text" name="fname" id="fname" placeholder="First Name">
+              <span>Last Name</span>
+              <input type="text" name="lname" id="lname" placeholder="Last Name">
+              <span>Mobile Number</span>
+              <input type="text" name="phone" id="phone" placeholder="Number">
+            </div>
+            <div class="button">
+              <button type="submit" name="button">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

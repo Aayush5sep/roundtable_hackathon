@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    {% for usr in userd %}
+        You're logged in as {{request.user}} and name is {{usr.fname}} {{usr.lname}}
+    {% endfor %}
+
+        {% for order in ordered %}
+            {{user.username}}
+            {{order.product_name}}
+            {{order.price}}
+        {% endfor %}
+    {% endif %}
+    {% if user.is_staff %}
+        You Are A Staff User Of This Website
+    {% endif %}
+</body>
+</html>

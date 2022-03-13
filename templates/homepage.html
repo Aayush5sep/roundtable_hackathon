@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{%static '/css/homepage.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>LOGIN PAGE</title>
+  </head>
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <a class="logo" href="#">derc</a>
+        <ul>
+          <li><a href="">Home</a></li>
+          {% if user.is_authenticated %}
+            <li class="active"><a href="/user/dashboard/">DASHBOARD</a></li>
+            <li class="active"><a href="/user/logout/">LOGOUT</a></li>
+          {% else %}
+            <li class="active"><a href="/user/loginpage/">LOGIN</a></li>
+            <li class="active"><a href="/user/newaccntpage/">SIGN UP</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="content">
+        <h1>GET REWARDED</h1>
+        <p> Get amazing discounts and rewards just by shopping though our affilated link. </p>
+        <div>
+            <a href='/affiliates/'><button class="button" type="submit" name="button"><span></span>Start Shopping</button></a>
+
+        </div>
+      </div>
+
+</div>
+
+
+    <section>
+
+      <div class="image1">
+        <img src="https://www.fetchrewards.com/assets/images/graphics/receipts-homepage-image.png" alt="">
+        <p>Earn rewardes on ANY purchase <br>on ANY site</p>
+
+      </div>
+
+      <div class="image2">
+        <img src="https://www.fetchrewards.com/assets/images/graphics/gift-cards-homepage-image.png" alt="">
+        <p>Redeem points for gift cards and other rewards</p>
+      </div>
+
+
+  </section>
+    <div class="container" style="margin-left: 0%; margin-top:-8%;">
+      <div class="row offset-1">
+
+        <div class="col-lg-3 col-md-3 col-sm-12 mx-auto my-2">
+          <div class="card dd" style="height:250px">
+            <div style="margin-top:17%">
+
+            <center>
+              <img src="{%static 'images/1.jpg'%}" style="border-radius: 100%; width: 90px; height: 90px; outline: 3px solid red; padding: 6px; margin-top: 4%;"></center>
+
+            <p style="text-align: center;" class="fw-bold pt-3 text-white"> AMAZON</p></center>
+
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12 mx-auto my-2">
+          <div class="card dd" style="height:250px">
+            <div style="margin-top:17%">
+
+            <center>
+              <img src="{%static 'images/2.jpg'%}" style="border-radius: 100%; width: 90px; height: 90px; outline: 3px solid red; padding: 6px; margin-top: 4%;"></center>
+
+            <p style="text-align: center;" class="fw-bold pt-3 text-white">FLIPKART</p></center>
+
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12  mx-auto my-2">
+          <div class="card dd" style="height:250px">
+            <div style="margin-top:17%">
+
+            <center>
+              <img src="{%static 'images/3.png'%}" style="border-radius: 100%; width: 90px; height: 90px; outline: 3px solid red; padding: 6px; margin-top: 4%;"></center>
+
+            <p style="text-align: center;" class="fw-bold pt-3 text-white"> SNAPDEAL</p></center>
+
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container" style="margin-left: 0%; margin-top:2%">
+      <div class="row offset-1">
+
+        <div class="col-lg-3 col-md-3 col-sm-12 mx-auto my-2 ">
+          <div class="card dd" style="height:250px">
+            <div style="margin-top:17%">
+
+            <center>
+              <img src="{%static 'images/4.png'%}" style="border-radius: 100%; width: 90px; height: 90px; outline: 3px solid red; padding: 6px; margin-top: 4%;"></center>
+
+            <p style="text-align: center;" class="fw-bold pt-3 text-white"> AMAZON</p></center>
+
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12 mx-auto my-2">
+          <div class="card dd" style="height:250px">
+            <div style="margin-top:17%">
+
+            <center>
+              <img src="{%static 'images/5.png'%}" style="border-radius: 100%; width: 90px; height: 90px; outline: 3px solid red; padding: 6px; margin-top: 4%;"></center>
+
+            <p style="text-align: center;" class="fw-bold pt-3 text-white">FLIPKART</p></center>
+
+          </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-12  mx-auto my-2">
+          <div class="card dd" style="height:250px">
+            <div style="margin-top:17%">
+
+            <center>
+              <img src="{%static 'images/6.webp'%}" style="border-radius: 100%; width: 90px; height: 90px; outline: 3px solid red; padding: 6px; margin-top: 4%;"></center>
+
+            <p style="text-align: center;" class="fw-bold pt-3 text-white"> SNAPDEAL</p></center>
+
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <header>
+<p>
+
+AND many more....</p>
+</header>
+
+<footer class="footer">
+<div class="l-footer">
+<h1>
+<img src="https://i.postimg.cc/y62wcLBq/logo.png" alt=""></h1>
+<p>DREC Pencho
+</p>
+</div>
+<ul class="r-footer">
+<li>
+  <h2>
+Social</h2>
+<ul class="box">
+<li><a href="#">Facebook</a></li>
+<li><a href="#">Twitter</a></li>
+<li><a href="#">Pinterest</a></li>
+<li><a href="#">Dribbble</a></li>
+</ul>
+</li>
+<li class="features">
+  <h2>
+Information</h2>
+<ul class="box h-box">
+<li><a href="#">Blog</a></li>
+<li><a href="#">Pricing</a></li>
+<li><a href="#">Sales</a></li>
+<li><a href="#">Tickets</a></li>
+<li><a href="#">Certifications</a></li>
+<li><a href="#">Customer Service</a></li>
+</ul>
+</li>
+<li>
+  <h2>
+Legal</h2>
+<ul class="box">
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Use</a></li>
+<li><a href="#">Contract</a></li>
+</ul>
+</li>
+</ul>
+<div class="b-footer">
+</div>
+</footer>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

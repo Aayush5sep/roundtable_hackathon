@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+
+}
+body{
+  min-height: 100vh;
+  background: linear-gradient(#2b1055,#7597de);
+}
+
+
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.image{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+img{
+  width: auto;
+  height: 100%;
+  display: block;
+  opacity: 0.8;
+}
+.flex{
+  left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.loginbox{
+  width: 50%;
+  background: transparent;
+  border-radius: 10%;
+  padding: 20px;
+}
+.loginbox h2{
+color: #a5c5d4;
+font-weight: 600;
+font-size: 1.5em;
+text-transform: uppercase;
+margin-bottom: 20px;
+border-bottom: 4px solid #000000;
+display: inline-block;
+letter-spacing: 1px;
+}
+.inputbox{
+  margin-bottom: 20px;
+
+}
+.inputbox span{
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: #75bbda;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.inputbox input{
+  width: 100%;
+  padding: 5px 5px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #57c7ff;
+  border-radius: 20px;
+  background-color: rgb(193, 226, 255);
+}
+.button button{
+  width: 50%;
+  padding: 10px 10px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: 1px solid #607d8b;
+  border-radius: 20px;
+  background: #5400db;
+  color: #fff;
+}
+.button button:hover{
+  background: #a974ff;
+  color:#250061;
+}
+.inputbox p{
+  margin-top: 10px;
+  color: #5cc9ff;
+  font-weight: 200;
+}
+.inputbox p a{
+  color: #24005e;
+  font-weight: 600;
+}
+@media (max-width:800px) {
+  .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 0%;
+      z-index: -1;
+  }
+  .flex {
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.9;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+  }
+  .body{
+    z-index: 1;
+    background-color: linear-gradient(225deg,#2b1055,#7597de);
+  }
+}

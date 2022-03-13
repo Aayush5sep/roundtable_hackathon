@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+pillow = "*"
+google-api-python-client = "*"
+google-auth-httplib2 = "*"
+google-auth-oauthlib = "*"
+django-oauth-toolkit = "*"
+beautifulsoup4 = "*"
+lxml = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
